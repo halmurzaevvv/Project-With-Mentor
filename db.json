@@ -1,0 +1,67 @@
+{
+  "posts": [
+    {
+      "title": "GOLF 4",
+      "price": "5500$",
+      "descr": "YES",
+      "image": "https://graphics.gestionaleauto.com/gonline_graphics/6555171_E_5759a19f4efcc.jpg",
+      "id": 1
+    },
+    {
+      "title": "Aziz",
+      "price": "1000",
+      "descr": "Didn't wash ass to day",
+      "image": "https://dazedimg-dazedgroup.netdna-ssl.com/640/0-0-1350-900/azure/dazed-prod/1170/2/1172657.jpg",
+      "id": 2
+    },
+    {
+      "title": "Aziz",
+      "price": "1000",
+      "descr": "Didn't wash ass to day",
+      "image": "https://dazedimg-dazedgroup.netdna-ssl.com/640/0-0-1350-900/azure/dazed-prod/1170/2/1172657.jpg",
+      "id": 3
+    },
+    {
+      "title": "Aziz",
+      "price": "1000",
+      "descr": "Didn't wash ass to day",
+      "image": "https://dazedimg-dazedgroup.netdna-ssl.com/640/0-0-1350-900/azure/dazed-prod/1170/2/1172657.jpg",
+      "id": 4
+    },
+    {
+      "title": "Aziz",
+      "price": "1000",
+      "descr": "Didn't wash ass to day",
+      "image": "https://dazedimg-dazedgroup.netdna-ssl.com/640/0-0-1350-900/azure/dazed-prod/1170/2/1172657.jpg",
+      "id": 5
+    },
+    {
+      "title": "Aziz",
+      "price": "1000",
+      "descr": "Didn't wash ass to day",
+      "image": "https://dazedimg-dazedgroup.netdna-ssl.com/640/0-0-1350-900/azure/dazed-prod/1170/2/1172657.jpg",
+      "id": 6
+    },
+    {
+      "title": "Aziz",
+      "price": "1000",
+      "descr": "Didn't wash ass to day",
+      "image": "https://dazedimg-dazedgroup.netdna-ssl.com/640/0-0-1350-900/azure/dazed-prod/1170/2/1172657.jpg",
+      "id": 7
+    },
+    {
+      "title": "Aziz",
+      "price": "1000",
+      "descr": "Didn't wash ass to day",
+      "image": "https://dazedimg-dazedgroup.netdna-ssl.com/640/0-0-1350-900/azure/dazed-prod/1170/2/1172657.jpg",
+      "id": 8
+    },
+    {
+      "title": "Aziz",
+      "price": "1000",
+      "descr": "Didn't wash ass to day",
+      "image": "https://dazedimg-dazedgroup.netdna-ssl.com/640/0-0-1350-900/azure/dazed-prod/1170/2/1172657.jpg",
+      "id": 9
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+    <!-- PS D:\Makers\JS\week7> node -v
+v18.12.1
+PS D:\Makers\JS\week7> node main.js
+Hello its node js
+123
+PS D:\Makers\JS\week7> npm install -g json-server
+user@WIN-9CGQ8ECE9UE MINGW64 /d/Makers/JS/week7
+$ json-server -v
+0.17.1
+
+user@WIN-9CGQ8ECE9UE MINGW64 /d/Makers/JS/week7
+$ json-server -w db.json -p 8000
