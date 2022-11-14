@@ -8,60 +8,82 @@
       "id": 1
     },
     {
-      "title": "Aziz",
+      "title": "Aziz1",
       "price": "1000",
       "descr": "Didn't wash ass to day",
       "image": "https://dazedimg-dazedgroup.netdna-ssl.com/640/0-0-1350-900/azure/dazed-prod/1170/2/1172657.jpg",
       "id": 2
     },
     {
-      "title": "Aziz",
+      "title": "Aziz2",
       "price": "1000",
       "descr": "Didn't wash ass to day",
       "image": "https://dazedimg-dazedgroup.netdna-ssl.com/640/0-0-1350-900/azure/dazed-prod/1170/2/1172657.jpg",
       "id": 3
     },
     {
-      "title": "Aziz",
+      "title": "Aziz3",
       "price": "1000",
       "descr": "Didn't wash ass to day",
       "image": "https://dazedimg-dazedgroup.netdna-ssl.com/640/0-0-1350-900/azure/dazed-prod/1170/2/1172657.jpg",
       "id": 4
     },
     {
-      "title": "Aziz",
+      "title": "Aziz4",
       "price": "1000",
       "descr": "Didn't wash ass to day",
       "image": "https://dazedimg-dazedgroup.netdna-ssl.com/640/0-0-1350-900/azure/dazed-prod/1170/2/1172657.jpg",
       "id": 5
     },
     {
-      "title": "Aziz",
+      "title": "Aziz5",
       "price": "1000",
       "descr": "Didn't wash ass to day",
       "image": "https://dazedimg-dazedgroup.netdna-ssl.com/640/0-0-1350-900/azure/dazed-prod/1170/2/1172657.jpg",
       "id": 6
     },
     {
-      "title": "Aziz",
+      "title": "Aziz6",
       "price": "1000",
       "descr": "Didn't wash ass to day",
       "image": "https://dazedimg-dazedgroup.netdna-ssl.com/640/0-0-1350-900/azure/dazed-prod/1170/2/1172657.jpg",
       "id": 7
     },
     {
-      "title": "Aziz",
+      "title": "Aziz7",
       "price": "1000",
       "descr": "Didn't wash ass to day",
       "image": "https://dazedimg-dazedgroup.netdna-ssl.com/640/0-0-1350-900/azure/dazed-prod/1170/2/1172657.jpg",
       "id": 8
     },
     {
-      "title": "Aziz",
+      "title": "Aziz8",
       "price": "1000",
       "descr": "Didn't wash ass to day",
       "image": "https://dazedimg-dazedgroup.netdna-ssl.com/640/0-0-1350-900/azure/dazed-prod/1170/2/1172657.jpg",
       "id": 9
+    }
+  ],
+  "users": [
+    {
+      "username": "user",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "username": "user2",
+      "password": "222",
+      "id": 2
+    },
+    {
+      "username": "user3",
+      "password": "333",
+      "id": 3
+    },
+    {
+      "username": "user4",
+      "password": "444",
+      "id": 4
     }
   ]
 }

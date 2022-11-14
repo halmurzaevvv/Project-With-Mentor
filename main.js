@@ -1,5 +1,20 @@
 // ? АПИ Для запросов
 let API = "http://localhost:8000/posts";
+let API_USERS = "http://localhost:8000/users";
+
+//! Registration + Auth
+
+//? sing up
+let username = document.querySelector("#username");
+let password = document.querySelector("#password");
+let submit = document.querySelector("#submit");
+
+//? sing in
+let usernameSignIn = document.querySelector("#usernameSignIn");
+let passwordSignIn = document.querySelector("#passwordSignIn");
+let logIn = document.querySelector("#LogIn");
+
+//! CRUD
 
 let inp = document.querySelector(".inp");
 let title = document.querySelector("#title");
@@ -29,6 +44,99 @@ let searchVal = "";
 
 //? Блок куда добавляются карточки из функции render
 let list = document.querySelector("#products-list");
+
+//! REGISTRATION & AUTH
+
+//? sing up
+submit.addEventListener("click", async () => {
+  let obj = {
+    username: username.value,
+    password: password.value,
+  };
+
+  if (!obj.username.trim() || !obj.password.trim()) {
+    alert("fill the form field");
+    return;
+  }
+  // console.log(obj);
+
+  await fetch(API_USERS, {
+    method: "POST",
+    body: JSON.stringify(obj),
+    headers: {
+      "Content-type": "application/json",
+    },
+  });
+});
+
+//? sing in
+
+logIn.addEventListener("click", async (e) => {
+  let obj2 = {
+    usernameSignIn: usernameSignIn.value,
+    passwordSignIn: passwordSignIn.value,
+  };
+  if (!obj2.usernameSignIn.trim() || !obj2.passwordSignIn.trim()) {
+    alert("fill the form field");
+  }
+  // console.log(obj2);
+
+  await fetch(API_USERS)
+    .then((res) => res.json())
+    .then((data) => {
+      for (let i of data) {
+        if (
+          usernameSignIn.value == i.username && passwordSignIn.value == i.password
+        ) {
+          alert("Your account was find");
+          console.log("Your account was find");
+          // usernameSignIn.value = "";
+          // passwordSignIn.value = "";
+          // console.log(data);
+          break;
+        } else if (
+          continue;
+        passwordSignIn.value !== i.password && usernameSignIn.value !== i.username
+        ) {
+    // continue;
+  } else {
+    // console.log("Your account is not found! Please register now");
+    alert("Your account is not found! Please register now");
+    // usernameSignIn.value = "";
+    // passwordSignIn.value = "";
+  }
+}
+    });
+
+  // await fetch(API_USERS)
+  //   .then((res) => res.json())
+  //   .then((data) =>
+  //     data.forEach(function (elem, i) {
+  //       // console.log(data);
+  //       if (
+  //         usernameSignIn.value == elem.username &&
+  //         passwordSignIn.value == elem.password
+  //       ) {
+  //         alert("Your account was find");
+  //         // console.log("Your account was find");
+  //         usernameSignIn.value = "";
+  //         passwordSignIn.value = "";
+  //         // console.log(data);
+
+  //         return true;
+  //       } else {
+  //         // alert("Your account is not found! Please register now");
+  //         console.log("Your account is not found! Please register now");
+  //         usernameSignIn.value = "";
+  //         passwordSignIn.value = "";
+  //         // console.log(data);
+
+  //         return true;
+  //       }
+  //       // return
+  //     })
+  //   );
+});
 
 // ! ADD - Обработчик событий на добавление
 btnAdd.addEventListener("click", async function (e) {
