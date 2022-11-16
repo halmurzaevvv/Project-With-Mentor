@@ -55,8 +55,19 @@
             aria-label="Search"
           />
           <button class="btn btn-outline-success" type="submit">Search</button>
+          <!-- -------------------------------------- -->
+          <button type="button" class="btn btn-outline-danger btn-cart" data-bs-toggle="modal" data-bs-target="#cartModal">🛒</button>
         </form>
       </div>
+      <div style="display:none" class="d-flex align-items-center justify-content-end w-100">
+              <a class="nav-link active profile mx-3"
+                data-bs-toggle="modal"
+                data-bs-target="#LogOut" href="#">Profile
+              </a>
+              <button id="logout-submit" class="btn btn-primary profile-btn">
+                Log Out
+              </button>
+            </div>
     </nav>
     <!-- ?navbar end -->
 
@@ -297,5 +308,24 @@
     </div>
    
     <!-- end of modal window for sign in -->
+
+    <!-- ? Modal for Cart -->
+<div class="modal fade modal-xl" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Cart shoper</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body modal-cart">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Payment method</button>
+      </div>
+    </div>
+  </div>
+</div>
   </body>
 </html>

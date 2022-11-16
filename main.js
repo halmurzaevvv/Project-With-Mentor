@@ -14,6 +14,13 @@ let usernameSignIn = document.querySelector("#usernameSignIn");
 let passwordSignIn = document.querySelector("#passwordSignIn");
 let logIn = document.querySelector("#LogIn");
 
+let first = document.querySelector(".remFirst");
+let second = document.querySelector(".remSecond");
+
+
+let profile = document.querySelector(".profile");
+let profileBtn = document.querySelector(".profile-btn");
+
 //! CRUD
 
 let inp = document.querySelector(".inp");
@@ -84,58 +91,48 @@ logIn.addEventListener("click", async (e) => {
   await fetch(API_USERS)
     .then((res) => res.json())
     .then((data) => {
-      for (let i of data) {
+      let found = false;
+      console.log(data);
+      data.forEach((i) => {
         if (
           usernameSignIn.value == i.username && passwordSignIn.value == i.password
         ) {
           alert("Your account was find");
-          console.log("Your account was find");
-          // usernameSignIn.value = "";
-          // passwordSignIn.value = "";
-          // console.log(data);
-          break;
-        } else if (
-          continue;
-        passwordSignIn.value !== i.password && usernameSignIn.value !== i.username
-        ) {
-    // continue;
-  } else {
-    // console.log("Your account is not found! Please register now");
-    alert("Your account is not found! Please register now");
-    // usernameSignIn.value = "";
-    // passwordSignIn.value = "";
+          found = true;
+          let user = {
+            username: i.username,
+            id: i.id,
+          };
+          localStorage.setItem("user", JSON.stringify(user));
+          console.log(data);
+          return;
+        }
+      });
+      if (!found) {
+        alert("Your account is not found! Please register now");
+      }
+
+    });
+});
+
+function checkUser() {
+  console.log(JSON.parse(localStorage.getItem("user")));
+  let user = JSON.parse(localStorage.getItem("user"));
+  if (JSON.parse(localStorage.getItem("user"))) {
+    profile.style.display = `block`;
+    profileBtn.style.display = `block`;
+    profile.innerHTML = user.username;
+    first.remove();
+    second.remove();
   }
 }
-    });
+checkUser();
 
-  // await fetch(API_USERS)
-  //   .then((res) => res.json())
-  //   .then((data) =>
-  //     data.forEach(function (elem, i) {
-  //       // console.log(data);
-  //       if (
-  //         usernameSignIn.value == elem.username &&
-  //         passwordSignIn.value == elem.password
-  //       ) {
-  //         alert("Your account was find");
-  //         // console.log("Your account was find");
-  //         usernameSignIn.value = "";
-  //         passwordSignIn.value = "";
-  //         // console.log(data);
-
-  //         return true;
-  //       } else {
-  //         // alert("Your account is not found! Please register now");
-  //         console.log("Your account is not found! Please register now");
-  //         usernameSignIn.value = "";
-  //         passwordSignIn.value = "";
-  //         // console.log(data);
-
-  //         return true;
-  //       }
-  //       // return
-  //     })
-  //   );
+profileBtn.addEventListener("click", function () {
+  localStorage.removeItem("user");
+  first.style.display = "block";
+  second.style.display = "block";
+  profileBtn.remove();
 });
 
 // ! ADD - Обработчик событий на добавление
@@ -203,6 +200,7 @@ async function render() {
       <p class="card-text">$ ${element.price}</p>
       <a href="#" id=${element.id} class="btn btn-danger btn-delete">DELETE</a>
       <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" id=${element.id} class="btn btn-dark btn-edit">EDIT</a>
+      <a href="#" id=${element.id} class="btn btn-warning btn-cart">🛒</a>
     </div>
   </div>`;
     list.prepend(newElem);
@@ -345,3 +343,86 @@ searchInp.addEventListener("input", () => {
   currentPage = 1;
   render();
 });
+
+
+//todo --------------------CART--------------------
+
+let modalCart = document.querySelector(".modal-cart");
+let cartBtn = document.querySelector(".btn-cart");
+
+function getDataFromLS() {
+  if (!localStorage.getItem("products")) {
+    localStorage.setItem("products", "[]");
+  }
+  let data = JSON.parse(localStorage.getItem("products"));
+  return data;
+}
+getDataFromLS();
+document.addEventListener(("click"), (e) => {
+  if (e.target.classList.contains("btn-cart")) {
+    let id = e.target.id;
+    setCart(id);
+  }
+});
+localStorage;
+
+
+async function setCart(id) {
+  await fetch(`${API}/${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      let products = getDataFromLS();
+      // console.log(products);
+      products.push(data);
+      // console.log(products);
+      localStorage.setItem("products", JSON.stringify(products));
+
+
+    });
+}
+
+cartBtn.addEventListener("click", function () {
+  let products = getDataFromLS();
+  let newElem = document.createElement("table");
+  newElem.innerHTML += `
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Descr</th>
+    </tr>
+  </thead>
+  `;
+  products.forEach((e) => {
+    let elem = drawItemLS(e);
+    newElem.innerHTML += elem;
+  });
+
+  console.log(newElem);
+  modalCart.append(newElem);
+  console.log();
+  console.log();
+});
+
+
+function drawItemLS(obj) {
+  return `
+  <tr>
+      <th><img src=${obj.image} widht="100px" height="100px" /></th>
+    </tr>
+    <tr>
+      <th>${obj.title}</th>
+    </tr>
+    <tr>
+      <th>${obj.price}</th>
+    </tr>
+    <tr>
+      <th>${obj.descr}</th>
+    </tr>
+    
+      <button class="btn btn-danger btn-del" type="button" id=${obj.id}>
+        Delete
+      </button>
+  `;
+}
